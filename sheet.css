@@ -1,0 +1,35 @@
+#p1{
+font-family: "Courier New";
+}
+
+#p2{
+position:absolute;
+top: 70px;
+font-family: "Courier New";
+}
+
+#p4 {
+position: absolute;
+top: 125px;
+color: green;
+font-family: "Courier New";
+}
+
+form {
+position: absolute;
+top: 60px;
+color:red;
+font-family: "Courier New";
+}
+
+span {
+position: absolute;
+top: 115px;
+color:yellow;
+font-family: "Courier New";
+}
+
+input[type="button"] {
+color:purple;
+font-family: "Courier New";
+}

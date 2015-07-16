@@ -2,24 +2,24 @@
 <html>
 
 <head>
-  <script language="JavaScript" type="text/JavaScript" "></script>
-	<!-- <link rel="stylesheet" type="text/css" href="sheet.css" /> -->
+  <script language="JavaScript" type="text/JavaScript"></script>
+	<link rel="stylesheet" type="text/css" href="sheet.css" />
 </head>
 
 <body>
   <h1 id="p1"></h1>
   <p id="p2"></p>
-  <p id="p3" </p>
-  <p id="theD" </p>	
+  <p id="p3"></p>
+  <p id="p4"></p>	
     <form action="" name="form1">
       <label for="Radio1" id="Label1"></label>
       <input type="radio" id="Radio1" name="Option" value="Option1" />
       <label for="Radio2" id="Label2"></label>
       <input type="radio" id="Radio2" name="Option" value="Option2" />
     </form>
-    <input type="button" name="Next" value="Submit" onclick="nextQuestion()" />
-    <input type="button" name="Last" value="Previous" onclick="lastQuestion()" />
-    <input type="button" name="Account" value="Register/Login" onclick="registerUser()" />
+    <span><input type="button" name="Next" value="Submit" onclick="nextQuestion()" />
+					<input type="button" name="Last" value="Previous" onclick="lastQuestion()" />
+					<input type="button" name="Account" value="Register/Login" onclick="registerUser()" /></span>
     <script>
 		
         var xmlHttp = new XMLHttpRequest();
@@ -32,21 +32,21 @@
 				
     if(xmlHttp){
         xmlHttp.onreadystatechange = function(){
-            theD = document.getElementById("theD");
-            if(xmlHttp.readyState == 1){
-                theD.innerHTML += "Status 1: Server connection established! <br/>";
+            p4 = document.getElementById("p4");
+            if(xmlHttp.readyState == 1) {
+                p4.innerHTML = "Status 1: Server connection established! <br/>";
                 }
-            else if(xmlHttp.readyState == 2){
-                theD.innerHTML += "Status 2: Request recieved! <br/>";
+            else if (xmlHttp.readyState == 2) {
+                p4.innerHTML = "Status 2: Request recieved! <br/>";
                 }
-            else if(xmlHttp.readyState == 3){
-                theD.innerHTML += "Status 3: Processing Request!<br/>";
+            else if (xmlHttp.readyState == 3) {
+                p4.innerHTML = "Status 3: Processing Request!<br/>";
                 }
-            else if(xmlHttp.readyState == 4){
+            else if (xmlHttp.readyState == 4) {
 
-                if(xmlHttp.status == 200){
+                if(xmlHttp.status == 200) {
                     var text = xmlHttp.responseText;
-                    theD.innerHTML += "Status 4: Processing Request!<br/>";
+                    p4.innerHTML = "Status 4: Request Complete!<br/>";
                     allQuestions = JSON.parse(text);
 										
 
@@ -164,7 +164,8 @@
           while (c.charAt(0) == ' ') c = c.substring(1);
           if (c.indexOf(name) == 0) {
             return c.substring(name.length, c.length);
-          } else {
+          } 
+					else {
             return "";
           }
         }
